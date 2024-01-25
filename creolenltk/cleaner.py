@@ -20,6 +20,7 @@ class Cleaner():
         pass
 
 
+    @staticmethod
     def normalize_whitespace(self, text):
         """
         Normalize whitespace in the text by replacing consecutive spaces with a single space.
@@ -33,6 +34,7 @@ class Cleaner():
         return ' '.join(text.split())
     
 
+    @staticmethod
     def remove_html_tags(self, text):
         """
         Remove HTML tags from the text.
@@ -47,6 +49,7 @@ class Cleaner():
         return soup.get_text()
 
 
+    @staticmethod
     def remove_special_characters(self, text):
         """
         Remove special characters, punctuation, or symbols from the text.
@@ -60,6 +63,7 @@ class Cleaner():
         return self.normalize_whitespace(re.sub(r'[^\w ]+', '', text))
     
 
+    @staticmethod
     def remove_numbers(self, text):
         """
         Remove numerical digits from the text.
@@ -73,6 +77,7 @@ class Cleaner():
         return self.normalize_whitespace(re.sub(r'\d+', '', text))
     
 
+    @staticmethod
     def clean_text(self, text, lowercase=True):
         """
         Perform a comprehensive text cleaning.

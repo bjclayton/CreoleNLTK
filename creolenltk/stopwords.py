@@ -1,6 +1,6 @@
 class Stopword:
     """
-    A class for handling stopwords in Creole Haitien text preprocessing.
+    A class for handling stopwords in Creole Haitian text preprocessing.
 
     Methods:
         - load_stopwords: Loads and returns stopwords for Creole Haitien.
@@ -14,6 +14,7 @@ class Stopword:
         """
         self.stopwords = self.load_stopwords()
 
+
     def load_stopwords(self):
         """
         Loads and returns stopwords for Creole Haitien.
@@ -24,6 +25,7 @@ class Stopword:
         with open('data\\creole_stopwords.txt', 'r', encoding='utf-8') as file:
             stopwords = {word.strip('\n') for word in file}
         return stopwords
+
 
     def remove_stopwords(self, text):
         """
@@ -36,6 +38,7 @@ class Stopword:
             str: The text with stopwords removed.
         """
         return ' '.join([word for word in text.split() if word not in self.stopwords])
+
 
     def is_stopword(self, word):
         """
