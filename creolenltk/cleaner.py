@@ -21,7 +21,7 @@ class Cleaner():
 
 
     @staticmethod
-    def normalize_whitespace(self, text):
+    def normalize_whitespace(text):
         """
         Normalize whitespace in the text by replacing consecutive spaces with a single space.
 
@@ -35,7 +35,7 @@ class Cleaner():
     
 
     @staticmethod
-    def remove_html_tags(self, text):
+    def remove_html_tags(text):
         """
         Remove HTML tags from the text.
 
@@ -50,7 +50,7 @@ class Cleaner():
 
 
     @staticmethod
-    def remove_special_characters(self, text):
+    def remove_special_characters(text):
         """
         Remove special characters, punctuation, or symbols from the text.
 
@@ -60,11 +60,11 @@ class Cleaner():
         Returns:
         - str: Text with special characters removed.
         """
-        return self.normalize_whitespace(re.sub(r'[^\w ]+', '', text))
+        return Cleaner.normalize_whitespace(re.sub(r'[^\w ]+', '', text))
     
 
     @staticmethod
-    def remove_numbers(self, text):
+    def remove_numbers(text):
         """
         Remove numerical digits from the text.
 
@@ -74,11 +74,11 @@ class Cleaner():
         Returns:
         - str: Text with numbers removed.
         """
-        return self.normalize_whitespace(re.sub(r'\d+', '', text))
+        return Cleaner.normalize_whitespace(re.sub(r'\d+', '', text))
     
 
     @staticmethod
-    def clean_text(self, text, lowercase=True):
+    def clean_text(text, lowercase=True):
         """
         Perform a comprehensive text cleaning.
 
@@ -89,9 +89,9 @@ class Cleaner():
         Returns:
         - str: Cleaned text.
         """
-        cleaned_html = self.remove_html_tags(text)
-        cleaned_special_chars = self.remove_special_characters(cleaned_html)
-        cleaned_text = self.remove_numbers(cleaned_special_chars)
+        cleaned_html = Cleaner.remove_html_tags(text)
+        cleaned_special_chars = Cleaner.remove_special_characters(cleaned_html)
+        cleaned_text = Cleaner.remove_numbers(cleaned_special_chars)
 
         if lowercase:
             return cleaned_text.lower()
