@@ -12,7 +12,12 @@ class Stopword:
         """
         Initialize the Stopword object.
         """
-        self.stopwords = self.load_stopwords()
+        self._stopwords = self.load_stopwords()
+
+
+    @property
+    def stopwords(self):
+        return self._stopwords
 
 
     def load_stopwords(self):
@@ -22,7 +27,7 @@ class Stopword:
         Returns:
             set: A set of stopwords.
         """
-        with open('data\\creole_stopwords.txt', 'r', encoding='utf-8') as file:
+        with open('data\\creole_stopwords.txt', encoding='utf-8') as file:
             stopwords = {word.strip('\n') for word in file}
         return stopwords
 
