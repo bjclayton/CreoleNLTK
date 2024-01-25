@@ -24,7 +24,7 @@ pip install creolenltk
 ## Usage
 
 ````python
-from creole_preprocessor import clean_text, tokenize_text, lowercase_text, remove_stopwords, expand_contractions, spell_check
+from creole_nltk import clean_text, tokenize, remove_stopwords, expand_contractions, spell_check
 
 ### Example Usage
 text = "Some Creole text with contractions, special characters, and misspellings."
@@ -33,10 +33,7 @@ text = "Some Creole text with contractions, special characters, and misspellings
 cleaned_text = clean_text(text)
 
 ### Tokenization
-tokens = tokenize_text(cleaned_text)
-
-### Lowercasing
-lowercased_text = lowercase_text(cleaned_text)
+tokens = tokenize(cleaned_text)
 
 ### Stopword Removal
 text_without_stopwords = remove_stopwords(cleaned_text)
