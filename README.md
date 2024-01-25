@@ -1,6 +1,6 @@
 # CreoleNLTK: Creole Natural Language Toolkit
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 CreoleNLTK is a Python library designed for preprocessing Creole text. The library includes various functions and tools to prepare text data for natural language processing (NLP) tasks. It provides functionality for cleaning, tokenization, lowercasing, stopword removal, contraction to expansion, and spelling checking.
 
