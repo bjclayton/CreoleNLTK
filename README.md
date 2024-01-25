@@ -46,7 +46,7 @@ expanded_text = expand_contractions(cleaned_text)
 
 ### Spelling Check
 corrected_text = spell_check(cleaned_text)
-```
+````
 For more detailed usage and examples, refer to the documentation.
 
 ## License
