@@ -6,12 +6,11 @@ CreoleNLTK is a Python library designed for preprocessing Creole text. The libra
 
 ## Features
 
-- **Text Cleaning:** Remove unwanted characters and clean the text.
-- **Tokenization:** Break the text into words or tokens.
-- **Lowercasing:** Convert text to lowercase.
-- **Stopword Removal:** Remove common words that do not contribute much to the meaning.
-- **Contraction to Expansion:** Expand contractions in the text.
 - **Spelling Check:** Identify and correct spelling errors.
+- **Contraction to Expansion:** Expand contractions in the text.
+- **Stopword Removal:** Remove common words that do not contribute much to the meaning.
+- **Tokenization:** Break the text into words or tokens.
+- **Text Cleaning:** Remove unwanted characters and clean the text.
 
 ## Installation
 
@@ -24,25 +23,7 @@ pip install creolenltk
 ## Usage
 
 ````python
-from creole_nltk import clean_text, tokenize, remove_stopwords, expand_contractions, spell_check
-
 ### Example Usage
-text = "Some Creole text with contractions, special characters, and misspellings."
-
-### Clean text
-cleaned_text = clean_text(text)
-
-### Tokenization
-tokens = tokenize(cleaned_text)
-
-### Stopword Removal
-text_without_stopwords = remove_stopwords(cleaned_text)
-
-### Contraction to Expansion
-expanded_text = expand_contractions(cleaned_text)
-
-### Spelling Check
-corrected_text = spell_check(cleaned_text)
 ````
 For more detailed usage and examples, refer to the documentation.
 
