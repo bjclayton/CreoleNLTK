@@ -13,12 +13,6 @@ class Cleaner():
         - clean_text(text, lowercase=True): Perform a comprehensive text cleaning.
         """
 
-    def __init__(self):
-        """
-        Initialize the Cleaner object.
-        """
-        pass
-
 
     @staticmethod
     def normalize_whitespace(text):

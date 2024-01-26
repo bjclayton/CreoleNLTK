@@ -7,7 +7,7 @@ class SpellingChecker:
     A class for correcting spelling errors in text based on: Peter Norvig, "How to Write a Spelling Corrector", http://norvig.com/spell-correct.html
 
     Methods:
-        - correct_spelling(word): Corrects spelling errors in the word.
+        - suggest(word): Corrects spelling errors in the word.
     """
 
     def __init__(self):
@@ -38,7 +38,7 @@ class SpellingChecker:
         return self._WORDS[word] / total_words
     
 
-    def correction(self, word):
+    def suggests(self, word):
         """
         Return the most probable correction for the given word.
         """
@@ -50,13 +50,13 @@ class SpellingChecker:
         Generate possible spelling corrections for the given word.
         """
         if len(word) == 1:
-            return [(word, 1.0)]
+            return word
         if word in string.punctuation:
-            return [(word, 1.0)]
+            return word
         if word in string.whitespace:
-            return [(word, 1.0)]
+            return word
         if word.replace(".", "").isdigit() or word.replace(",", "").isdigit():
-            return [(word, 1.0)]
+            return word
         
         return (self._known([word]) or
                 self._known(self._edits1(word)) or
@@ -90,10 +90,3 @@ class SpellingChecker:
         Generate all possible edits at a distance of 2 from the given word.
         """
         return (e2 for e1 in self._edits1(word) for e2 in self._edits1(e1))
-    
-
-spelling_checker = SpellingChecker()
-
-word_to_check = 'lavea'
-corrected_word = spelling_checker.correction(word_to_check)
-print(f"Original Word: {word_to_check}, Corrected Word: {corrected_word}")

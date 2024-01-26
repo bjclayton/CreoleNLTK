@@ -42,7 +42,7 @@ class Stopword:
         Returns:
             str: The text with stopwords removed.
         """
-        return ' '.join([word for word in text.split() if word not in self.stopwords])
+        return ' '.join([word for word in text.split() if str(word).lower() not in self.stopwords])
 
 
     def is_stopword(self, word):
@@ -55,4 +55,4 @@ class Stopword:
         Returns:
             bool: True if the word is a stopword, False otherwise.
         """
-        return word in self.stopwords
+        return word.lower() in self.stopwords

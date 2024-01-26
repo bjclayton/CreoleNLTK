@@ -11,20 +11,27 @@ class Tokenizer:
     """
 
     @staticmethod
-    def word_tokenize(text, expand_contractions=False):
+    def word_tokenize(text, expand_contractions=False, lowercase=True):
         """
         Tokenize the input text into a list of words.
 
         Parameters:
-            text (str): The input text to be tokenized.
-            expand_contractions (bool, optional): If True, expands contractions in the text. Default is False.
+            - text (str): The input text to be tokenized.
+            - expand_contractions (bool, optional): If True, expands contractions   in the text. Default is False.
+            - expand_contractions (bool, optional):  Whether to convert the text to lowercase (default is True).
 
         Returns:
             list: A list of tokens (words) extracted from the input text.
         """
+        if text is None or str(text) == '':
+            return []
+        
         text = re.sub(r"[^\w\s']", '', text)
 
         if(expand_contractions):
             text = ContractionToExpansion.expand_contractions(text)
 
+        if lowercase:
+            text = text.lower()
+        
         return  nltk.word_tokenize(text)

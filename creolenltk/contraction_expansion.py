@@ -10,7 +10,7 @@ class ContractionToExpansion:
 
     CONTRACTIONS_MAPPING = {
         "m": "mwen",
-        "mw": "mwwen",
+        "mw": "mwen",
         "n": "nou",
         "ka": "kapab",
         "l": "li",
@@ -25,9 +25,13 @@ class ContractionToExpansion:
         "konn": "konnen",
         "kab": "kapab",
         "lap": "li ap",
-        "pap": "pa",
+        "paka": "pa kapab",
         "al": "ale",
-        "jan": "kijan"
+        "jan": "kijan",
+        "diw": "di ou",
+        "poum": "pou mwen",
+        "yok": "yo ki",
+        "yap": "yo ap"
     }
 
     @staticmethod
@@ -41,11 +45,10 @@ class ContractionToExpansion:
         Returns:
         str: Text with contractions expanded.
         """
-        text = text.replace("'", " ")
-
         if isinstance(text, str):
+            text = text.replace("'", " ")
             for key, value in ContractionToExpansion.CONTRACTIONS_MAPPING.items():
-                text = re.sub(r'\b' + re.escape(key) + r'\b', value, text)
+                text = re.sub(r'\b' + re.escape(key.lower()) + r'\b', value, text)
             return text
         else:
             return text
