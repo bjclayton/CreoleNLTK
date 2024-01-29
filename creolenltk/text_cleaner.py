@@ -1,7 +1,8 @@
 import re
 from bs4 import BeautifulSoup
 
-class Cleaner():
+
+class TextCleaner:
     """
         A class for performing various text cleaning operations.
 
@@ -12,7 +13,6 @@ class Cleaner():
         - remove_numbers(text): Remove numerical digits from the text.
         - clean_text(text, lowercase=True): Perform a comprehensive text cleaning.
         """
-
 
     @staticmethod
     def normalize_whitespace(text):
@@ -26,7 +26,6 @@ class Cleaner():
         - str: Text with normalized whitespace.
         """
         return ' '.join(text.split())
-    
 
     @staticmethod
     def remove_html_tags(text):
@@ -42,7 +41,6 @@ class Cleaner():
         soup = BeautifulSoup(text, 'html.parser')
         return soup.get_text()
 
-
     @staticmethod
     def remove_special_characters(text):
         """
@@ -54,8 +52,7 @@ class Cleaner():
         Returns:
         - str: Text with special characters removed.
         """
-        return Cleaner.normalize_whitespace(re.sub(r'[^\w ]+', '', text))
-    
+        return TextCleaner.normalize_whitespace(re.sub(r'[^\w ]+', '', text))
 
     @staticmethod
     def remove_numbers(text):
@@ -68,8 +65,7 @@ class Cleaner():
         Returns:
         - str: Text with numbers removed.
         """
-        return Cleaner.normalize_whitespace(re.sub(r'\d+', '', text))
-    
+        return TextCleaner.normalize_whitespace(re.sub(r'\d+', '', text))
 
     @staticmethod
     def clean_text(text, lowercase=True):
@@ -83,9 +79,9 @@ class Cleaner():
         Returns:
         - str: Cleaned text.
         """
-        cleaned_html = Cleaner.remove_html_tags(text)
-        cleaned_special_chars = Cleaner.remove_special_characters(cleaned_html)
-        cleaned_text = Cleaner.remove_numbers(cleaned_special_chars)
+        cleaned_html = TextCleaner.remove_html_tags(text)
+        cleaned_special_chars = TextCleaner.remove_special_characters(cleaned_html)
+        cleaned_text = TextCleaner.remove_numbers(cleaned_special_chars)
 
         if lowercase:
             return cleaned_text.lower()

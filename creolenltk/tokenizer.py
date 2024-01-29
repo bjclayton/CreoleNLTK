@@ -1,6 +1,7 @@
 import nltk
 import re
-from contraction_expansion import ContractionToExpansion
+from .contraction_expansion import ContractionToExpansion
+
 
 class Tokenizer:
     """
@@ -25,7 +26,7 @@ class Tokenizer:
         """
         if text is None or str(text) == '':
             return []
-        
+
         text = re.sub(r"[^\w\s']", '', text)
 
         if expand_contractions:
@@ -33,5 +34,5 @@ class Tokenizer:
 
         if lowercase:
             text = text.lower()
-        
-        return  nltk.word_tokenize(text)
+
+        return nltk.word_tokenize(text)

@@ -3,6 +3,7 @@ from collections import Counter
 import string
 from pathlib import Path
 
+
 class SpellingChecker:
     """
     A class for correcting spelling errors in text based on: Peter Norvig, "How to Write a Spelling Corrector", http://norvig.com/spell-correct.html
@@ -18,7 +19,7 @@ class SpellingChecker:
         - _edits2(word): Generate all possible edits at a distance of 2 from the given word.
     """
 
-    def __init__(self, words_file='creolenltk/data/creole_words.txt'):
+    def __init__(self, words_file='../creolenltk/data/creole_words.txt'):
         """
         Initialize the spelling checker with a words.
 
@@ -26,7 +27,6 @@ class SpellingChecker:
             words_file (str or Path): Path to the words file.
         """
         self._WORDS = self._load(words_file)
-
 
     def _load(self, file_path):
         """
@@ -43,7 +43,6 @@ class SpellingChecker:
             words = file.read()
         return Counter(self._extract_words(words))
 
-
     def _extract_words(self, text):
         """
         Extract words from the given text.
@@ -55,7 +54,6 @@ class SpellingChecker:
             list: List of words extracted from the text.
         """
         return re.findall(r'\w+', text.lower())
-
 
     def _probability(self, word):
         """
@@ -69,7 +67,6 @@ class SpellingChecker:
         """
         total_words = sum(self._WORDS.values())
         return self._WORDS[word] / total_words
-    
 
     def suggests(self, word):
         """
@@ -81,9 +78,7 @@ class SpellingChecker:
         Returns:
             str: The most probable correction for the word.
         """
-        print(self._candidates(word))
         return max(self._candidates(word), key=self._probability)
-
 
     def _candidates(self, word):
         """
@@ -99,12 +94,11 @@ class SpellingChecker:
             return [word]
         if word.replace(".", "").isdigit() or word.replace(",", "").isdigit():
             return [word]
-        
+
         return (self._known([word]) or
                 self._known(self._edits1(word)) or
                 self._known(self._edits2(word)) or
                 [word])
-    
 
     def _known(self, words):
         """
@@ -117,7 +111,6 @@ class SpellingChecker:
             set: Set of known words.
         """
         return set(w for w in words if w in self._WORDS)
-
 
     def _edits1(self, word):
         """
@@ -137,7 +130,6 @@ class SpellingChecker:
         replaces = [a + c + b[1:] for a, b in splits for c in letters if b]
         inserts = [a + c + b for a, b in splits for c in letters]
         return set(deletes + transposes + replaces + inserts)
-
 
     def _edits2(self, word):
         """

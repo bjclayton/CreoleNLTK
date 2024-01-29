@@ -1,5 +1,6 @@
 import re
 
+
 class ContractionToExpansion:
     """
     A class for expanding contractions in Creole Haitian text.

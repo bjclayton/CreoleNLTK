@@ -1,6 +1,7 @@
 import unittest
 from creolenltk.contraction_expansion import ContractionToExpansion
 
+
 class TestContractionToExpansion(unittest.TestCase):
 
     def setUp(self):
@@ -29,6 +30,7 @@ class TestContractionToExpansion(unittest.TestCase):
         input_none = None
         result_none = self.contraction_expander.expand_contractions(input_none)
         self.assertEqual(result_none, input_none)
+
 
 if __name__ == '__main__':
     unittest.main()

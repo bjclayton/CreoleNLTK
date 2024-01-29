@@ -11,7 +11,7 @@ class Stopword:
         - is_stopword(word): Checks if a specific word is a stopword.
     """
 
-    def __init__(self, stopwords_path='creolenltk/data/creole_stopwords.txt'):
+    def __init__(self, stopwords_path='../creolenltk/data/creole_stopwords.txt'):
         """
         Initialize the Stopword object.
 
@@ -20,11 +20,9 @@ class Stopword:
         """
         self._stopwords = self.load_stopwords(stopwords_path)
 
-
     @property
     def stopwords(self):
         return self._stopwords
-
 
     def load_stopwords(self, file_path):
         """
@@ -41,7 +39,6 @@ class Stopword:
             stopwords = {word.strip('\n') for word in file}
         return stopwords
 
-
     def remove_stopwords(self, text):
         """
         Removes stopwords from the given text.
@@ -53,7 +50,6 @@ class Stopword:
             str: The text with stopwords removed.
         """
         return ' '.join([word for word in text.split() if str(word).lower() not in self.stopwords])
-
 
     def is_stopword(self, word):
         """

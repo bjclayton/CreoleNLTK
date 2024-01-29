@@ -19,7 +19,7 @@ CreoleNLTK is a Python library designed for preprocessing Creole text. The libra
 You can install CreoleNLTK using pip:
 
 ```bash
-pip install creolenltk==0.1.2
+pip install creolenltk==0.1.0
 ```
 
 ## Usage

@@ -1,5 +1,6 @@
 import unittest
-from creolenltk.stopwords import Stopword  
+from creolenltk.stopwords import Stopword
+
 
 class TestStopword(unittest.TestCase):
 
@@ -25,6 +26,7 @@ class TestStopword(unittest.TestCase):
         non_stopword = "Tomat"
         self.assertTrue(self.stopword_instance.is_stopword(stopword))
         self.assertFalse(self.stopword_instance.is_stopword(non_stopword))
+
 
 if __name__ == '__main__':
     unittest.main()

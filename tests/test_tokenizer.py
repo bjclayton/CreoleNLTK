@@ -1,6 +1,7 @@
 import unittest
 from creolenltk.tokenizer import Tokenizer
 
+
 class TestTokenizer(unittest.TestCase):
 
     def setUp(self):
@@ -17,7 +18,8 @@ class TestTokenizer(unittest.TestCase):
 
         # Test with a sentence containing contractions
         input_text_with_contractions = "mw paka kwè sa rive."
-        result_tokens_with_contractions = self.tokenizer.word_tokenize(input_text_with_contractions, expand_contractions=True)
+        result_tokens_with_contractions = self.tokenizer.word_tokenize(input_text_with_contractions,
+                                                                       expand_contractions=True)
         expected_tokens_with_contractions = ["mwen", "pa", "kapab", "kwè", "sa", "rive"]
         self.assertEqual(result_tokens_with_contractions, expected_tokens_with_contractions)
 
@@ -30,6 +32,7 @@ class TestTokenizer(unittest.TestCase):
         input_none = None
         result_none = self.tokenizer.word_tokenize(input_none)
         self.assertEqual(result_none, [])
+
 
 if __name__ == '__main__':
     unittest.main()
