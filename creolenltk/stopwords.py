@@ -1,18 +1,24 @@
+from pathlib import Path
+
+
 class Stopword:
     """
     A class for handling stopwords in Creole Haitian text preprocessing.
 
     Methods:
-        - load_stopwords: Loads and returns stopwords for Creole Haitien.
+        - load_stopwords(file_path): Loads and returns stopwords for Creole Haitien.
         - remove_stopwords(text): Removes stopwords from the given text.
         - is_stopword(word): Checks if a specific word is a stopword.
     """
 
-    def __init__(self):
+    def __init__(self, stopwords_path='creolenltk/data/creole_stopwords.txt'):
         """
         Initialize the Stopword object.
+
+        Parameters:
+            stopwords_path (str): Path to the stopwords file.
         """
-        self._stopwords = self.load_stopwords()
+        self._stopwords = self.load_stopwords(stopwords_path)
 
 
     @property
@@ -20,14 +26,18 @@ class Stopword:
         return self._stopwords
 
 
-    def load_stopwords(self):
+    def load_stopwords(self, file_path):
         """
         Loads and returns stopwords for Creole Haitien.
+
+        Parameters:
+            file_path (str): Path to the stopwords file.
 
         Returns:
             set: A set of stopwords.
         """
-        with open('data\\creole_stopwords.txt', encoding='utf-8') as file:
+        file_path = Path(file_path).resolve()
+        with open(file_path, encoding='utf-8') as file:
             stopwords = {word.strip('\n') for word in file}
         return stopwords
 

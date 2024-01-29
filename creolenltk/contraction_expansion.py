@@ -31,7 +31,9 @@ class ContractionToExpansion:
         "diw": "di ou",
         "poum": "pou mwen",
         "yok": "yo ki",
-        "yap": "yo ap"
+        "yap": "yo ap",
+        "tap": "te ap",
+        "kap": "ki ap"
     }
 
     @staticmethod

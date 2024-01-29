@@ -7,7 +7,7 @@ class Tokenizer:
     The Tokenizer class provides functionality for tokenizing text.
 
     Methods:
-        word_tokenize(text): Tokenize the input text into a list of words.
+        - word_tokenize(text, expand_contractions, lowercase): Tokenize the input text into a list of words.
     """
 
     @staticmethod
@@ -17,8 +17,8 @@ class Tokenizer:
 
         Parameters:
             - text (str): The input text to be tokenized.
-            - expand_contractions (bool, optional): If True, expands contractions   in the text. Default is False.
-            - expand_contractions (bool, optional):  Whether to convert the text to lowercase (default is True).
+            - expand_contractions (bool, optional): If True, expands contractions in the text. Default is False.
+            - lowercase (bool, optional): Whether to convert the text to lowercase (default is True).
 
         Returns:
             list: A list of tokens (words) extracted from the input text.
@@ -28,7 +28,7 @@ class Tokenizer:
         
         text = re.sub(r"[^\w\s']", '', text)
 
-        if(expand_contractions):
+        if expand_contractions:
             text = ContractionToExpansion.expand_contractions(text)
 
         if lowercase:
