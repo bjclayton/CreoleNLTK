@@ -19,7 +19,7 @@ CreoleNLTK is a Python library designed for preprocessing Creole text. The libra
 You can install CreoleNLTK using pip:
 
 ```bash
-pip install creolenltk==0.1.0
+pip install creolenltk==0.1.2
 ```
 
 ## Usage
@@ -82,7 +82,7 @@ tokens = tokenizer.word_tokenize(sentence, expand_contractions=True, lowercase=T
 
 print(f"Sentence: {sentence}\nTokens: {tokens}") # ["sa", "se", "yon", "fraz", "senp"]
 ````
-For more detailed usage and examples, refer to the documentation.
+For more detailed usage and examples, refer to the [documentation](https://pypi.org/project/creolenltk/0.1.2/).
 
 ## License
 
