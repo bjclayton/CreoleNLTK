@@ -82,7 +82,7 @@ tokens = tokenizer.word_tokenize(sentence, expand_contractions=True, lowercase=T
 
 print(f"Sentence: {sentence}\nTokens: {tokens}") # ["sa", "se", "yon", "fraz", "senp"]
 ````
-For more detailed usage and examples, refer to the [documentation](https://pypi.org/project/creolenltk/0.1.2/).
+For more detailed usage and examples, refer to the [documentation](https://pypi.org/project/creolenltk/).
 
 ## License
 
