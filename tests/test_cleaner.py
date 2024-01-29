@@ -11,6 +11,7 @@ class TestCleaner(unittest.TestCase):
         input_text = "  Sa  a   se    yon  tès. "
         expected_output = "Sa a se yon tès."
         self.assertEqual(self.cleaner.normalize_whitespace(input_text), expected_output)
+        
 
     def test_remove_html_tags(self):
         input_text = "<p>Sa se yon <b>tès</b>.</p>"

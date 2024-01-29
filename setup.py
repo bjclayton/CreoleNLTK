@@ -1,13 +1,15 @@
 from setuptools import setup, find_packages
+from pathlib import Path
 
-VERSION = '0.1.0' 
+VERSION = '0.1.2' 
 DESCRIPTION = 'A Python library for Creole text preprocessing'
-LONG_DESCRIPTION = 'A Python library designed for preprocessing Creole text. The library includes various functions and tools to clean, tokenize, and prepare text data for natural language processing (NLP) tasks. Dependencies include BeautifulSoup4 and NLTK.'
+this_directory = Path(__file__).parent
+LONG_DESCRIPTION = (this_directory / "README.md").read_text()
 
 setup(
     name='creolenltk',
     version=VERSION,
-    packages=find_packages(),
+    packages=find_packages(exclude=('test*', )),
     install_requires=[
         'beautifulsoup4>=4.9.3',
         'nltk>=3.6.2',
@@ -16,6 +18,7 @@ setup(
     author_email='jclaytonblanc@gmail.com',
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type='text/markdown',
     url='https://github.com/jcblanc2/CreoleNLTK.git',
     keywords=['python', 'nlp', 'creole', 'natural language processing', 'text preprocessing'],
     classifiers=[
