@@ -27,8 +27,6 @@ pip install creolenltk
 ### Spelling Checker
 
 ````python
-# -*- coding: utf-8 -*-
-
 from creolenltk.spelling_checker import SpellingChecker
 
 # Initialize the spelling checker
@@ -58,8 +56,6 @@ print(f"Original Sentence: {original_sentence}\nExpanded Sentence: {expanded_sen
 ### Stopword Removal
 
 ````python
-# -*- coding: utf-8 -*-
-
 from creolenltk.stopword import Stopword
 
 # Initialize the stopword handler
