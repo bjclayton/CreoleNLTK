@@ -51,7 +51,8 @@ class ContractionToExpansion:
         if isinstance(text, str):
             text = text.replace("'", " ")
             for key, value in ContractionToExpansion.CONTRACTIONS_MAPPING.items():
-                text = re.sub(r'\b' + re.escape(key.lower()) + r'\b', value, text)
+                pattern = re.compile(r'\b' + re.escape(key) + r'\b', re.IGNORECASE)
+                text = re.sub(pattern, value, text)
             return text
         else:
             return text

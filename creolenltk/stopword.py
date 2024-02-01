@@ -28,7 +28,7 @@ class Stopword:
         Returns:
             set: A set of stopwords.
         """
-        file_path = Path(__file__).parent / 'data' / 'creole_words.txt'
+        file_path = Path(__file__).parent / 'data' / 'creole_stopwords.txt'
         with open(file_path, encoding='utf-8') as file:
             stopwords = {word.strip('\n') for word in file}
         return stopwords

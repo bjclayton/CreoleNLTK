@@ -41,7 +41,7 @@ print(f"Original Word: òtgraf, Corrected Word: {corrected_word}") # òtograf
 ### Contraction to Expansion
 
 ````python
-from contraction_expansion import ContractionToExpansion
+from creolenltk.contraction_expansion import ContractionToExpansion
 
 # Initialize the contraction expander
 contraction_expander = ContractionToExpansion()

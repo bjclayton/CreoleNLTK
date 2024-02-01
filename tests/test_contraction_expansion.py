@@ -16,8 +16,8 @@ class TestContractionToExpansion(unittest.TestCase):
         expected_result = "mwen pa kapab ale jodia, mwen ap rete lakay."
         self.assertEqual(result_text, expected_result)
 
-        input_text_no_contractions = "Li di l'ap manje manje a midi poutan l pa manje vre."
-        expected_result = "Li di li ap manje manje a midi poutan li pa manje vre."
+        input_text_no_contractions = "L di l'ap manje manje a midi poutan l pa manje vre."
+        expected_result = "li di li ap manje manje a midi poutan li pa manje vre."
         result_text_no_contractions = self.contraction_expander.expand_contractions(input_text_no_contractions)
         self.assertEqual(result_text_no_contractions, expected_result)
 

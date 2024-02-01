@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-VERSION = '1.0.1'
+VERSION = '1.0.3'
 DESCRIPTION = 'A Python library for Creole text preprocessing'
 LONG_DESCRIPTION = (Path(__file__).parent / "README.md").read_text()
 
@@ -9,7 +9,7 @@ setup(
     name='creolenltk',
     version=VERSION,
     packages=find_packages(exclude=('test*',)),
-    package_data={'creolenltk': ['data/*']},
+    package_data={'creolenltk.data': ['*.txt']},
     install_requires=[
         'beautifulsoup4>=4.9.3',
         'nltk>=3.6.2',
