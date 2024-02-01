@@ -3,8 +3,7 @@ from pathlib import Path
 
 VERSION = '0.1.3'
 DESCRIPTION = 'A Python library for Creole text preprocessing'
-this_directory = Path(__file__).parent
-LONG_DESCRIPTION = (this_directory / "README.md").read_text()
+LONG_DESCRIPTION = (Path(__file__).parent / "README.md").read_text()
 
 setup(
     name='creolenltk',

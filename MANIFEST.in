@@ -1,1 +1,1 @@
-include creolenltk/data/*.txt
+include data/*.txt

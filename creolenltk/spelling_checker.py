@@ -19,7 +19,7 @@ class SpellingChecker:
         - _edits2(word): Generate all possible edits at a distance of 2 from the given word.
     """
 
-    def __init__(self, words_file='../creolenltk/data/creole_words.txt'):
+    def __init__(self, words_file='./data/creole_words.txt'):
         """
         Initialize the spelling checker with a words.
 
@@ -68,7 +68,7 @@ class SpellingChecker:
         total_words = sum(self._WORDS.values())
         return self._WORDS[word] / total_words
 
-    def suggests(self, word):
+    def correction(self, word):
         """
         Return the most probable correction for the given word.
 

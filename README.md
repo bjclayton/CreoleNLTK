@@ -33,7 +33,7 @@ from creolenltk.spelling_checker import SpellingChecker
 spell_checker = SpellingChecker()
 
 # Correct spelling errors in a word
-corrected_word = spell_checker.suggest('òtgraf')
+corrected_word = spell_checker.correction('òtgraf')
 
 print(f"Original Word: òtgraf, Corrected Word: {corrected_word}") # òtograf
 ````

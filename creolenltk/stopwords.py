@@ -11,7 +11,7 @@ class Stopword:
         - is_stopword(word): Checks if a specific word is a stopword.
     """
 
-    def __init__(self, stopwords_path='../creolenltk/data/creole_stopwords.txt'):
+    def __init__(self, stopwords_path='./data/creole_stopwords.txt'):
         """
         Initialize the Stopword object.
 

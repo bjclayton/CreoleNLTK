@@ -7,15 +7,15 @@ class TestSpellingChecker(unittest.TestCase):
         self.spelling = SpellingChecker()
 
     def test_correction(self):
-        assert self.spelling.suggests('òtgraf') == 'òtograf'
-        assert self.spelling.suggests('korrijje') == 'korije'
-        assert self.spelling.suggests('potoa') == 'poto'
-        assert self.spelling.suggests('aranje') == 'ranje'
-        assert self.spelling.suggests('manifesstee') == 'manifeste'
-        assert self.spelling.suggests('manqh') == 'manch'
-        assert self.spelling.suggests('privo') == 'prive'
-        assert self.spelling.suggests('mo') == 'mo'
-        assert self.spelling.suggests('ekselan') == 'ekselan'
+        assert self.spelling.correction('òtgraf') == 'òtograf'
+        assert self.spelling.correction('korrijje') == 'korije'
+        assert self.spelling.correction('potoa') == 'poto'
+        assert self.spelling.correction('aranje') == 'ranje'
+        assert self.spelling.correction('manifesstee') == 'manifeste'
+        assert self.spelling.correction('manqh') == 'manch'
+        assert self.spelling.correction('privo') == 'prive'
+        assert self.spelling.correction('mo') == 'mo'
+        assert self.spelling.correction('ekselan') == 'ekselan'
 
 
 if __name__ == '__main__':

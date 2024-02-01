@@ -5,4 +5,3 @@ from .spelling_checker import SpellingChecker
 from .stopwords import Stopword
 from .tokenizer import Tokenizer
 
-PACKAGE_DIR = os.path.dirname(os.path.abspath(__file__))
