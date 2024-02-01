@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-VERSION = '0.1.3'
+VERSION = '0.1.5'
 DESCRIPTION = 'A Python library for Creole text preprocessing'
 LONG_DESCRIPTION = (Path(__file__).parent / "README.md").read_text()
 

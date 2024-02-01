@@ -9,7 +9,7 @@ class SpellingChecker:
     A class for correcting spelling errors in text based on: Peter Norvig, "How to Write a Spelling Corrector", http://norvig.com/spell-correct.html
 
     Methods:
-        - _load(file_path): Load words from the given file.
+        - _load(): Load words from the given file.
         - _extract_words(text): Extract words from the given text.
         - _probability(word): Return the probability of the given word.
         - suggests(word): Return the most probable correction for the given word.
@@ -19,26 +19,20 @@ class SpellingChecker:
         - _edits2(word): Generate all possible edits at a distance of 2 from the given word.
     """
 
-    def __init__(self, words_file='./data/creole_words.txt'):
+    def __init__(self):
         """
         Initialize the spelling checker with a words.
-
-        Parameters:
-            words_file (str or Path): Path to the words file.
         """
-        self._WORDS = self._load(words_file)
+        self._WORDS = self._load()
 
-    def _load(self, file_path):
+    def _load(self):
         """
         Load words from the given file.
-
-        Parameters:
-            file_path (str or Path): Path to the words file.
 
         Returns:
             Counter: A counter of words.
         """
-        file_path = Path(file_path).resolve()
+        file_path = Path(__file__).parent / 'data' / 'creole_words.txt'
         with open(file_path, encoding='utf-8') as file:
             words = file.read()
         return Counter(self._extract_words(words))

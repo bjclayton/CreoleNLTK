@@ -6,35 +6,29 @@ class Stopword:
     A class for handling stopwords in Creole Haitian text preprocessing.
 
     Methods:
-        - load_stopwords(file_path): Loads and returns stopwords for Creole Haitien.
+        - load_stopwords(): Loads and returns stopwords for Creole Haitien.
         - remove_stopwords(text): Removes stopwords from the given text.
         - is_stopword(word): Checks if a specific word is a stopword.
     """
 
-    def __init__(self, stopwords_path='./data/creole_stopwords.txt'):
+    def __init__(self):
         """
         Initialize the Stopword object.
-
-        Parameters:
-            stopwords_path (str): Path to the stopwords file.
         """
-        self._stopwords = self.load_stopwords(stopwords_path)
+        self._stopwords = self.load_stopwords()
 
     @property
     def stopwords(self):
         return self._stopwords
 
-    def load_stopwords(self, file_path):
+    def load_stopwords(self):
         """
         Loads and returns stopwords for Creole Haitien.
-
-        Parameters:
-            file_path (str): Path to the stopwords file.
 
         Returns:
             set: A set of stopwords.
         """
-        file_path = Path(file_path).resolve()
+        file_path = Path(__file__).parent / 'data' / 'creole_words.txt'
         with open(file_path, encoding='utf-8') as file:
             stopwords = {word.strip('\n') for word in file}
         return stopwords

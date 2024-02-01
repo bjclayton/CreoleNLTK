@@ -1,5 +1,5 @@
 import unittest
-from creolenltk.tokenizer import Tokenizer
+from creolenltk import Tokenizer
 
 
 class TestTokenizer(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from creolenltk.text_cleaner import TextCleaner
+from creolenltk import TextCleaner
 
 
 class TestCleaner(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from creolenltk.stopwords import Stopword
+from creolenltk import Stopword
 
 
 class TestStopword(unittest.TestCase):

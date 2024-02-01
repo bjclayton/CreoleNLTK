@@ -1,5 +1,5 @@
 import unittest
-from creolenltk.contraction_expansion import ContractionToExpansion
+from creolenltk import ContractionToExpansion
 
 
 class TestContractionToExpansion(unittest.TestCase):

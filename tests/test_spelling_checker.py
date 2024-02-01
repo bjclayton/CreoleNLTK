@@ -1,5 +1,5 @@
 import unittest
-from creolenltk.spelling_checker import SpellingChecker
+from creolenltk import SpellingChecker
 
 
 class TestSpellingChecker(unittest.TestCase):
