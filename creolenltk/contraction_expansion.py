@@ -18,7 +18,6 @@ class ContractionToExpansion:
         "pot": "te poko",
         "t": "te",
         "w": "ou",
-        "pral": "prale",
         "fin": "fini",
         "sot": "soti",
         "k": "ki",
@@ -27,14 +26,13 @@ class ContractionToExpansion:
         "kab": "kapab",
         "lap": "li ap",
         "paka": "pa kapab",
-        "al": "ale",
         "jan": "kijan",
         "diw": "di ou",
         "poum": "pou mwen",
         "yok": "yo ki",
         "yap": "yo ap",
         "tap": "te ap",
-        "kap": "ki ap"
+        "kap": "ki ap",
     }
 
     @staticmethod

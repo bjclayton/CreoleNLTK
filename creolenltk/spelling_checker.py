@@ -2,6 +2,7 @@ import re
 from collections import Counter
 import string
 from pathlib import Path
+from .tokenizer import Tokenizer
 
 
 class SpellingChecker:
@@ -17,6 +18,8 @@ class SpellingChecker:
         - _known(words): Filter the list of words to include only those present in the words list.
         - _edits1(word): Generate all possible edits at a distance of 1 from the given word.
         - _edits2(word): Generate all possible edits at a distance of 2 from the given word.
+        - correct_word(word): Return the most probable correction for the given word.
+        - correct(text): Return the most probable correction for the given text.
     """
 
     def __init__(self):
@@ -62,7 +65,7 @@ class SpellingChecker:
         total_words = sum(self._WORDS.values())
         return self._WORDS[word] / total_words
 
-    def correction(self, word):
+    def correct_word(self, word):
         """
         Return the most probable correction for the given word.
 
@@ -73,6 +76,23 @@ class SpellingChecker:
             str: The most probable correction for the word.
         """
         return max(self._candidates(word), key=self._probability)
+
+    def correct(self, text):
+        """
+            Return the most probable correction for the given text.
+
+            Parameters:
+                text (str): The text to be corrected.
+
+            Returns:
+                str: The most probable correction for the text.
+            """
+        words = map(self.correct_word, Tokenizer.word_tokenize(
+            text,
+            expand_contractions=True,
+            lowercase=True)
+                    )
+        return ' '.join(words)
 
     def _candidates(self, word):
         """
